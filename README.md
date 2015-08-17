@@ -1,1 +1,2 @@
-# plan_my_life
+# Plan my life
+The best planner in the world
