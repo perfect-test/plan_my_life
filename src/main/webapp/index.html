@@ -1,0 +1,703 @@
+<html>
+<head>
+    <script src="scripts/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script type="text/javascript">
+        var isEventConteinerShown = false;
+        function showEvent(event) {
+            isEventConteinerShown = true;
+            $("#simple-event-container").show();
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles/calendar-styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/event-data-styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/day-styles.css">
+    <title>Plan My Life</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Plan My Life</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Дополнительно<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">События <span class="badge" style="background: lightblue">5</span> </a></li>
+                            <li><a href="#">Настройки сайта</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">О нас</li>
+                            <li><a href="#">Наша цель</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Добавить встречу</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Михаил Сидельников</a></li>
+                    <li style="padding-top: 4px"><img style="border-color: black" class="img-circle"
+                                                      width="40"
+                                                      height="40" src="test-sources/my_photo.jpg">
+                        <button style="margin-left: 20px" type="submit" class="btn btn-danger">Выйти</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+
+    <div class="row center-block" id="calendar-block">
+
+        <span class="glyphicon glyphicon-menu-left" style="float: left;margin-right: 10px"></span>
+
+        <div class="panel panel-default" style="float: left">
+            <div class="panel-heading">Январь</div>
+            <div class="panel-body">
+                <table class="table  table-bordered" style="border-radius: 3px">
+                    <thead>
+                    <tr>
+                        <th class="day-name">Пн</th>
+                        <th class="day-name">Вт</th>
+                        <th class="day-name">Ср</th>
+                        <th class="day-name">Чт</th>
+                        <th class="day-name">Пт</th>
+                        <th class="day-name">Сб</th>
+                        <th class="day-name">Вс</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="day-element">1</td>
+                        <td class="day-element">2</td>
+                        <td class="day-element">3</td>
+                        <td class="day-element sunday-saturday">4</td>
+                        <td class="day-element sunday-saturday">5</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">6</td>
+                        <td class="day-element celebrity-day">7</td>
+                        <td class="day-element">8</td>
+                        <td class="day-element">9</td>
+                        <td class="day-element">10</td>
+                        <td class="day-element sunday-saturday">11</td>
+                        <td class="day-element sunday-saturday">12</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">13</td>
+                        <td class="day-element">14</td>
+                        <td class="day-element">15</td>
+                        <td class="day-element celebrity-day">16</td>
+                        <td class="day-element">17</td>
+                        <td class="day-element sunday-saturday">18</td>
+                        <td class="day-element sunday-saturday">19</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">20</td>
+                        <td class="day-element">21</td>
+                        <td class="day-element">22</td>
+                        <td class="day-element">23</td>
+                        <td class="day-element">24</td>
+                        <td class="day-element sunday-saturday">25</td>
+                        <td class="day-element sunday-saturday">26</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">27</td>
+                        <td class="day-element">28</td>
+                        <td class="day-element">29</td>
+                        <td class="day-element">30</td>
+                        <td class="day-element">31</td>
+                        <td class="sunday-saturday"></td>
+                        <td class="sunday-saturday"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="float: left; margin-left: 10px">
+            <div class="panel-heading">Февраль</div>
+            <div class="panel-body">
+                <table class="table  table-bordered" style="border-radius: 3px">
+                    <thead>
+                    <tr>
+                        <th class="day-name">Пн</th>
+                        <th class="day-name">Вт</th>
+                        <th class="day-name">Ср</th>
+                        <th class="day-name">Чт</th>
+                        <th class="day-name">Пт</th>
+                        <th class="day-name">Сб</th>
+                        <th class="day-name">Вс</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="day-element sunday-saturday">1</td>
+                        <td class="day-element sunday-saturday">2</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">3</td>
+                        <td class="day-element">4</td>
+                        <td class="day-element">5</td>
+                        <td class="day-element">6</td>
+                        <td class="day-element">7</td>
+                        <td class="day-element sunday-saturday">8</td>
+                        <td class="day-element sunday-saturday">9</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">10</td>
+                        <td class="day-element">11</td>
+                        <td class="day-element">12</td>
+                        <td class="day-element">13</td>
+                        <td class="day-element">14</td>
+                        <td class="day-element sunday-saturday">15</td>
+                        <td class="day-element sunday-saturday">16</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">17</td>
+                        <td class="day-element">18</td>
+                        <td class="day-element">19</td>
+                        <td class="day-element">20</td>
+                        <td class="day-element">21</td>
+                        <td class="day-element sunday-saturday">22</td>
+                        <td class="day-element celebrity-day">23</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">24</td>
+                        <td class="day-element">25</td>
+                        <td class="day-element">26</td>
+                        <td class="day-element">27</td>
+                        <td class="day-element">28</td>
+                        <td class="sunday-saturday"></td>
+                        <td class="sunday-saturday"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="float: left; margin-left: 10px">
+            <div class="panel-heading">Март</div>
+            <div class="panel-body">
+                <table class="table  table-bordered" style="border-radius: 3px">
+                    <thead>
+                    <tr>
+                        <th class="day-name">Пн</th>
+                        <th class="day-name">Вт</th>
+                        <th class="day-name">Ср</th>
+                        <th class="day-name">Чт</th>
+                        <th class="day-name">Пт</th>
+                        <th class="day-name">Сб</th>
+                        <th class="day-name">Вс</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="day-element sunday-saturday">1</td>
+                        <td class="day-element sunday-saturday">2</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">3</td>
+                        <td class="day-element">4</td>
+                        <td class="day-element">5</td>
+                        <td class="day-element">6</td>
+                        <td class="day-element">7</td>
+                        <td class="day-element celebrity-day">8</td>
+                        <td class="day-element sunday-saturday">9</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">10</td>
+                        <td class="day-element">11</td>
+                        <td class="day-element">12</td>
+                        <td class="day-element">13</td>
+                        <td class="day-element">14</td>
+                        <td class="day-element sunday-saturday">15</td>
+                        <td class="day-element sunday-saturday">16</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">17</td>
+                        <td class="day-element">18</td>
+                        <td class="day-element today">19</td>
+                        <td class="day-element">20</td>
+                        <td class="day-element">21</td>
+                        <td class="day-element sunday-saturday">22</td>
+                        <td class="day-element sunday-saturday">23</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">24</td>
+                        <td class="day-element">25</td>
+                        <td class="day-element">26</td>
+                        <td class="day-element">27</td>
+                        <td class="day-element">28</td>
+                        <td class="day-element sunday-saturday">29</td>
+                        <td class="day-element sunday-saturday">30</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="sunday-saturday"></td>
+                        <td class="sunday-saturday"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="float: left; margin-left: 10px">
+            <div class="panel-heading">Апрель</div>
+            <div class="panel-body">
+                <table class="table  table-bordered" style="border-radius: 3px">
+                    <thead>
+                    <tr>
+                        <th class="day-name">Пн</th>
+                        <th class="day-name">Вт</th>
+                        <th class="day-name">Ср</th>
+                        <th class="day-name">Чт</th>
+                        <th class="day-name">Пт</th>
+                        <th class="day-name">Сб</th>
+                        <th class="day-name">Вс</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td class="day-element">1</td>
+                        <td class="day-element">2</td>
+                        <td class="day-element">3</td>
+                        <td class="day-element">4</td>
+                        <td class="day-element sunday-saturday">5</td>
+                        <td class="day-element sunday-saturday">6</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">7</td>
+                        <td class="day-element">8</td>
+                        <td class="day-element">9</td>
+                        <td class="day-element">10</td>
+                        <td class="day-element">11</td>
+                        <td class="day-element sunday-saturday">12</td>
+                        <td class="day-element sunday-saturday">13</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">14</td>
+                        <td class="day-element">15</td>
+                        <td class="day-element">16</td>
+                        <td class="day-element">17</td>
+                        <td class="day-element">18</td>
+                        <td class="day-element sunday-saturday">19</td>
+                        <td class="day-element sunday-saturday">20</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">21</td>
+                        <td class="day-element">22</td>
+                        <td class="day-element">23</td>
+                        <td class="day-element">24</td>
+                        <td class="day-element">25</td>
+                        <td class="day-element sunday-saturday">26</td>
+                        <td class="day-element sunday-saturday">27</td>
+                    </tr>
+                    <tr>
+                        <td class="day-element">28</td>
+                        <td class="day-element">29</td>
+                        <td class="day-element">30</td>
+                        <td></td>
+                        <td></td>
+                        <td class="sunday-saturday"></td>
+                        <td class="sunday-saturday"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <span class="glyphicon glyphicon-menu-right" style="float: left;padding-left: 10px"></span>
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="panel panel-default today-panel">
+        <div class="panel-heading">Сегодня, 19 марта 2015 года</div>
+        <div class="panel-body">
+            <div class="row center-block">
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">0.00</span></div>
+                    <div class="hour-element"><span class="center-span">0.15</span></div>
+                    <div class="hour-element"><span class="center-span">0.30</span></div>
+                    <div class="hour-element"><span class="center-span">0.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">1.00</span></div>
+                    <div class="hour-element"><span class="center-span">1.15</span></div>
+                    <div class="hour-element"><span class="center-span">1.30</span></div>
+                    <div class="hour-element"><span class="center-span">1.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">2.00</span></div>
+                    <div class="hour-element"><span class="center-span">2.15</span></div>
+                    <div class="hour-element"><span class="center-span">2.30</span></div>
+                    <div class="hour-element"><span class="center-span">2.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">3.00</span></div>
+                    <div class="hour-element"><span class="center-span">3.15</span></div>
+                    <div class="hour-element"><span class="center-span">3.30</span></div>
+                    <div class="hour-element"><span class="center-span">3.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">4.00</span></div>
+                    <div class="hour-element"><span class="center-span">4.15</span>
+
+                        <div style="margin-left: 7px">
+                            <div class="event-pointer"
+                                 style="background-color: red"></div>
+                            <div class="event-pointer"
+                                 style="background-color: green"></div>
+                            <div class="event-pointer"
+                                 style="background-color: gray"></div>
+                            <div class="event-pointer"
+                                 style="background-color: blue; "></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hour-element"><span class="center-span">4.30</span>
+
+                        <div style="margin-left: 7px">
+                            <div class="event-pointer"
+                                 style="background-color: red"></div>
+                        </div>
+                    </div>
+                    <div class="hour-element"><span class="center-span">4.45</span>
+
+                        <div style="margin-left: 7px">
+                            <div class="event-pointer"
+                                 style="background-color: red"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">5.00</span>
+
+                        <div style="margin-left: 4px">
+                            <div class="main-event-pointer"
+                                 style="background-color: red"
+                                 onclick="showEvent(event)"></div>
+                        </div>
+                    </div>
+                    <div class="hour-element"><span class="center-span">5.15</span></div>
+                    <div class="hour-element"><span class="center-span">5.30</span></div>
+                    <div class="hour-element"><span class="center-span">5.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">6.00</span></div>
+                    <div class="hour-element"><span class="center-span">6.15</span></div>
+                    <div class="hour-element"><span class="center-span">6.30</span></div>
+                    <div class="hour-element"><span class="center-span">6.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">7.00</span></div>
+                    <div class="hour-element"><span class="center-span">7.15</span></div>
+                    <div class="hour-element"><span class="center-span">7.30</span></div>
+                    <div class="hour-element"><span class="center-span">7.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">8.00</span></div>
+                    <div class="hour-element"><span class="center-span">8.15</span></div>
+                    <div class="hour-element"><span class="center-span">8.30</span></div>
+                    <div class="hour-element"><span class="center-span">8.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">9.00</span></div>
+                    <div class="hour-element"><span class="center-span">9.15</span></div>
+                    <div class="hour-element"><span class="center-span">9.30</span></div>
+                    <div class="hour-element"><span class="center-span">9.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">10.00</span></div>
+                    <div class="hour-element"><span class="center-span">10.15</span></div>
+                    <div class="hour-element"><span class="center-span">10.30</span></div>
+                    <div class="hour-element"><span class="center-span">10.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">11.00</span></div>
+                    <div class="hour-element"><span class="center-span">11.15</span></div>
+                    <div class="hour-element"><span class="center-span">11.30</span></div>
+                    <div class="hour-element"><span class="center-span">11.45</span></div>
+                </div>
+            </div>
+            <div class="row center-block" style="margin-top: 50px">
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">12.00</span></div>
+                    <div class="hour-element"><span class="center-span">12.15</span></div>
+                    <div class="hour-element"><span class="center-span">12.30</span></div>
+                    <div class="hour-element"><span class="center-span">12.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">13.00</span></div>
+                    <div class="hour-element"><span class="center-span">13.15</span></div>
+                    <div class="hour-element"><span class="center-span">13.30</span></div>
+                    <div class="hour-element"><span class="center-span">13.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">14.00</span></div>
+                    <div class="hour-element"><span class="center-span">14.15</span></div>
+                    <div class="hour-element"><span class="center-span">14.30</span></div>
+                    <div class="hour-element"><span class="center-span">14.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">15.00</span></div>
+                    <div class="hour-element"><span class="center-span">15.15</span></div>
+                    <div class="hour-element"><span class="center-span">15.30</span></div>
+                    <div class="hour-element"><span class="center-span">15.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">16.00</span></div>
+                    <div class="hour-element"><span class="center-span">16.15</span></div>
+                    <div class="hour-element"><span class="center-span">16.30</span></div>
+                    <div class="hour-element"><span class="center-span">16.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">17.00</span></div>
+                    <div class="hour-element"><span class="center-span">17.15</span></div>
+                    <div class="hour-element"><span class="center-span">17.30</span></div>
+                    <div class="hour-element"><span class="center-span">17.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">18.00</span></div>
+                    <div class="hour-element"><span class="center-span">18.15</span></div>
+                    <div class="hour-element"><span class="center-span">18.30</span></div>
+                    <div class="hour-element"><span class="center-span">18.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">19.00</span></div>
+                    <div class="hour-element"><span class="center-span">19.15</span></div>
+                    <div class="hour-element"><span class="center-span">19.30</span></div>
+                    <div class="hour-element"><span class="center-span">19.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">20.00</span></div>
+                    <div class="hour-element"><span class="center-span">20.15</span></div>
+                    <div class="hour-element"><span class="center-span">20.30</span></div>
+                    <div class="hour-element"><span class="center-span">20.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">21.00</span></div>
+                    <div class="hour-element"><span class="center-span">21.15</span></div>
+                    <div class="hour-element"><span class="center-span">21.30</span></div>
+                    <div class="hour-element"><span class="center-span">21.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">22.00</span></div>
+                    <div class="hour-element"><span class="center-span">22.15</span></div>
+                    <div class="hour-element"><span class="center-span">22.30</span></div>
+                    <div class="hour-element"><span class="center-span">22.45</span></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="main-hour-element"><span class="center-span">23.00</span></div>
+                    <div class="hour-element"><span class="center-span">23.15</span></div>
+                    <div class="hour-element"><span class="center-span">23.30</span></div>
+                    <div class="hour-element"><span class="center-span">23.45</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<div class="container">
+    <div class="row center-block" id="custom-event-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">Купить продукты<span class="glyphicon glyphicon-edit edit-button"
+                                                            style="margin-left: 10px"
+                                                            title="Изменить название"></span></div>
+            <div class="panel-body">
+                <div class="row event-container-data-block">
+                    <span class="title">Описание : </span>
+                    <span class="simple-text">Купить продукты</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить описание"></span>
+
+                </div>
+                <div class="row event-container-data-block">
+                    <span class="title">Дата начала : </span>
+                    <span class="simple-text">не известно</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату начала"></span>
+                </div>
+                <div class="row event-container-data-block">
+                    <span class="title">Дата конца : </span>
+                    <span class="simple-text">не известно</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату начала"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Цвет в календаре : </span>
+                    <span class="simple-text" style="color: red">красный</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить цвет"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Список покупок : </span>
+                    <div class="list-element">
+                        <span class="simple-text">Картошка</span>
+                    </div>
+                    <div class="list-element">
+                        <span class="simple-text">Молоко</span>
+                    </div>
+
+                    <div class="list-element">
+                        <span class="simple-text">Лимонады</span>
+                    </div>
+
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить список"></span>
+                </div>
+
+
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-info">Добавить поле</button>
+                </div>
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-primary">Поделиться</button>
+                    <button type="button" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;">Удалить</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row center-block" id="simple-event-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">Встреча с заказчиком<span class="glyphicon glyphicon-edit edit-button"
+                                                                 style="margin-left: 10px"
+                                                                 title="Изменить название"></span></div>
+            <div class="panel-body">
+                <div class="row event-container-data-block">
+                    <span class="title">Описание : </span>
+                    <span class="simple-text">Обсудить с заказчиком новый логотип</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить описание"></span>
+                </div>
+                <div class="row event-container-data-block">
+                    <span class="title">Дата начала : </span>
+                    <span class="simple-text">17 марта, 7.00</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату начала"></span>
+                </div>
+                <div class="row event-container-data-block">
+                    <span class="title">Дата окончания : </span>
+                    <span class="simple-text">17 марта, 10.00</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату окончания"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Участники : </span>
+
+                    <div>
+                        <a class="simple-text member-link">Артем Копылов</a>
+                        <span class="simple-text">Николай Сызганцев</span>
+                        <a class="simple-text member-link">Василий Петухов</a>
+                    </div>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Место : </span>
+                    <a class="simple-text event-place">Ресторан "Красивое место"</a>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить место"></span>
+                    <span class="glyphicon glyphicon-remove edit-button" style="margin-left: 10px"
+                          title="Удалить поле"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Фото со встречи : </span>
+
+                    <div>
+                        <img src="test-sources/meeting1.jpg" width="80"
+                             height="80">
+                        <img src="test-sources/meeting2.jpg" width="80"
+                             height="80">
+                    <span class="glyphicon glyphicon-plus add-photo-button" style="margin-left: 10px"
+                          title="Добавить фото"></span>
+                    </div>
+                </div>
+
+
+                <div class="row event-container-data-block">
+                    <span class="title">Напоминание : </span>
+                    <span class="simple-text">смс, 21 мая, 17.00</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить напоминания"></span>
+                    <span class="glyphicon glyphicon-remove edit-button" style="margin-left: 10px"
+                          title="Удалить поле"></span>
+
+                </div>
+
+
+                <div class="row event-container-data-block">
+                    <span class="title">Комментарии и примечания : </span>
+                    <span class="simple-text">Не забыть про новые цвета</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить цвет"></span>
+                    <span class="glyphicon glyphicon-remove edit-button" style="margin-left: 10px"
+                          title="Удалить поле"></span>
+
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Цвет в календаре : </span>
+                    <span class="simple-text" style="color: red">красный</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить цвет"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-info">Добавить поле</button>
+                </div>
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-primary">Поделиться</button>
+                    <button type="button" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;">Удалить</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+.today {
+    background-color: lightblue;
+}
+.today-panel {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.hour-element {
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    text-align: center;
+    horiz-align: center;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.hour-element:hover {
+    cursor: pointer;
+    background-color: #46b8da;
+}
+.main-hour-element {
+    width: 80px;
+    height: 40px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: bottom;
+    border-radius: 30px;
+}
+.main-hour-element:hover {
+    cursor: pointer;
+    background-color: #46b8da;
+}
+.center-span{
+    position: relative;
+    top: 3%;
+}
+.event-pointer {
+    border-radius: 50px;
+    width: 5px;height: 5px;
+    float: left;
+    margin-left: 5px
+}
+.event-pointer:hover {
+    border: 1px solid yellow;
+}
+.main-event-pointer {
+    border-radius: 50px;
+    width: 5px;height: 5px;
+    float: left;
+    margin-left: 10px
+}
+.main-event-pointer:hover {
+    border: 1px solid yellow;
+}

@@ -1,0 +1,27 @@
+.title {
+    font-weight: 500;
+}
+
+.simple-text{
+    font-weight: 200;
+}
+.event-container-data-block {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.event-place:hover {
+    cursor: pointer;
+}
+.edit-button {
+    cursor: pointer;
+}
+.add-photo-button{
+    cursor: pointer;
+}
+.member-link {
+    cursor: pointer;
+}
+.list-element {
+    margin-left: 10px;
+}

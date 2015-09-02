@@ -1,0 +1,23 @@
+.day-name{
+    font-size: 12px;
+    text-align: center;
+}
+.day-element {
+    font-size: 13px;
+    text-align: center;
+}
+.day-element:hover {
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.sunday-saturday {
+    background-color: beige;
+}
+.celebrity-day {
+    background-color: lightcoral;
+}
+
+
+
+
