@@ -17,7 +17,15 @@
 .celebrity-day {
     background-color: lightcoral;
 }
+.show-month-before {
+    float: left;
+    margin-right: 10px
+}
 
+.show-month-after {
+    float: left;
+    padding-left: 10px
+}
 
 
 

@@ -6,12 +6,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="scripts/calendar.js"></script>
     <script type="text/javascript">
-        var isEventConteinerShown = false;
-        function showEvent(event) {
-            isEventConteinerShown = true;
-            $("#simple-event-container").show();
-        }
+        $( document ).ready(function() {
+            CALENDAR.initCalendarBlock();
+        });
+
     </script>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/calendar-styles.css">
     <link rel="stylesheet" type="text/css" href="styles/event-data-styles.css">
     <link rel="stylesheet" type="text/css" href="styles/day-styles.css">
@@ -54,294 +54,13 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container" id="calendar-container" style="display: none">
 
     <div class="row center-block" id="calendar-block">
-
-        <span class="glyphicon glyphicon-menu-left" style="float: left;margin-right: 10px"></span>
-
-        <div class="panel panel-default" style="float: left">
-            <div class="panel-heading">Январь</div>
-            <div class="panel-body">
-                <table class="table  table-bordered" style="border-radius: 3px">
-                    <thead>
-                    <tr>
-                        <th class="day-name">Пн</th>
-                        <th class="day-name">Вт</th>
-                        <th class="day-name">Ср</th>
-                        <th class="day-name">Чт</th>
-                        <th class="day-name">Пт</th>
-                        <th class="day-name">Сб</th>
-                        <th class="day-name">Вс</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td class="day-element">1</td>
-                        <td class="day-element">2</td>
-                        <td class="day-element">3</td>
-                        <td class="day-element sunday-saturday">4</td>
-                        <td class="day-element sunday-saturday">5</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">6</td>
-                        <td class="day-element celebrity-day">7</td>
-                        <td class="day-element">8</td>
-                        <td class="day-element">9</td>
-                        <td class="day-element">10</td>
-                        <td class="day-element sunday-saturday">11</td>
-                        <td class="day-element sunday-saturday">12</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">13</td>
-                        <td class="day-element">14</td>
-                        <td class="day-element">15</td>
-                        <td class="day-element celebrity-day">16</td>
-                        <td class="day-element">17</td>
-                        <td class="day-element sunday-saturday">18</td>
-                        <td class="day-element sunday-saturday">19</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">20</td>
-                        <td class="day-element">21</td>
-                        <td class="day-element">22</td>
-                        <td class="day-element">23</td>
-                        <td class="day-element">24</td>
-                        <td class="day-element sunday-saturday">25</td>
-                        <td class="day-element sunday-saturday">26</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">27</td>
-                        <td class="day-element">28</td>
-                        <td class="day-element">29</td>
-                        <td class="day-element">30</td>
-                        <td class="day-element">31</td>
-                        <td class="sunday-saturday"></td>
-                        <td class="sunday-saturday"></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="panel panel-default" style="float: left; margin-left: 10px">
-            <div class="panel-heading">Февраль</div>
-            <div class="panel-body">
-                <table class="table  table-bordered" style="border-radius: 3px">
-                    <thead>
-                    <tr>
-                        <th class="day-name">Пн</th>
-                        <th class="day-name">Вт</th>
-                        <th class="day-name">Ср</th>
-                        <th class="day-name">Чт</th>
-                        <th class="day-name">Пт</th>
-                        <th class="day-name">Сб</th>
-                        <th class="day-name">Вс</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="day-element sunday-saturday">1</td>
-                        <td class="day-element sunday-saturday">2</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">3</td>
-                        <td class="day-element">4</td>
-                        <td class="day-element">5</td>
-                        <td class="day-element">6</td>
-                        <td class="day-element">7</td>
-                        <td class="day-element sunday-saturday">8</td>
-                        <td class="day-element sunday-saturday">9</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">10</td>
-                        <td class="day-element">11</td>
-                        <td class="day-element">12</td>
-                        <td class="day-element">13</td>
-                        <td class="day-element">14</td>
-                        <td class="day-element sunday-saturday">15</td>
-                        <td class="day-element sunday-saturday">16</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">17</td>
-                        <td class="day-element">18</td>
-                        <td class="day-element">19</td>
-                        <td class="day-element">20</td>
-                        <td class="day-element">21</td>
-                        <td class="day-element sunday-saturday">22</td>
-                        <td class="day-element celebrity-day">23</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">24</td>
-                        <td class="day-element">25</td>
-                        <td class="day-element">26</td>
-                        <td class="day-element">27</td>
-                        <td class="day-element">28</td>
-                        <td class="sunday-saturday"></td>
-                        <td class="sunday-saturday"></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="panel panel-default" style="float: left; margin-left: 10px">
-            <div class="panel-heading">Март</div>
-            <div class="panel-body">
-                <table class="table  table-bordered" style="border-radius: 3px">
-                    <thead>
-                    <tr>
-                        <th class="day-name">Пн</th>
-                        <th class="day-name">Вт</th>
-                        <th class="day-name">Ср</th>
-                        <th class="day-name">Чт</th>
-                        <th class="day-name">Пт</th>
-                        <th class="day-name">Сб</th>
-                        <th class="day-name">Вс</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="day-element sunday-saturday">1</td>
-                        <td class="day-element sunday-saturday">2</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">3</td>
-                        <td class="day-element">4</td>
-                        <td class="day-element">5</td>
-                        <td class="day-element">6</td>
-                        <td class="day-element">7</td>
-                        <td class="day-element celebrity-day">8</td>
-                        <td class="day-element sunday-saturday">9</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">10</td>
-                        <td class="day-element">11</td>
-                        <td class="day-element">12</td>
-                        <td class="day-element">13</td>
-                        <td class="day-element">14</td>
-                        <td class="day-element sunday-saturday">15</td>
-                        <td class="day-element sunday-saturday">16</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">17</td>
-                        <td class="day-element">18</td>
-                        <td class="day-element today">19</td>
-                        <td class="day-element">20</td>
-                        <td class="day-element">21</td>
-                        <td class="day-element sunday-saturday">22</td>
-                        <td class="day-element sunday-saturday">23</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">24</td>
-                        <td class="day-element">25</td>
-                        <td class="day-element">26</td>
-                        <td class="day-element">27</td>
-                        <td class="day-element">28</td>
-                        <td class="day-element sunday-saturday">29</td>
-                        <td class="day-element sunday-saturday">30</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">31</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="sunday-saturday"></td>
-                        <td class="sunday-saturday"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="panel panel-default" style="float: left; margin-left: 10px">
-            <div class="panel-heading">Апрель</div>
-            <div class="panel-body">
-                <table class="table  table-bordered" style="border-radius: 3px">
-                    <thead>
-                    <tr>
-                        <th class="day-name">Пн</th>
-                        <th class="day-name">Вт</th>
-                        <th class="day-name">Ср</th>
-                        <th class="day-name">Чт</th>
-                        <th class="day-name">Пт</th>
-                        <th class="day-name">Сб</th>
-                        <th class="day-name">Вс</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td class="day-element">1</td>
-                        <td class="day-element">2</td>
-                        <td class="day-element">3</td>
-                        <td class="day-element">4</td>
-                        <td class="day-element sunday-saturday">5</td>
-                        <td class="day-element sunday-saturday">6</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">7</td>
-                        <td class="day-element">8</td>
-                        <td class="day-element">9</td>
-                        <td class="day-element">10</td>
-                        <td class="day-element">11</td>
-                        <td class="day-element sunday-saturday">12</td>
-                        <td class="day-element sunday-saturday">13</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">14</td>
-                        <td class="day-element">15</td>
-                        <td class="day-element">16</td>
-                        <td class="day-element">17</td>
-                        <td class="day-element">18</td>
-                        <td class="day-element sunday-saturday">19</td>
-                        <td class="day-element sunday-saturday">20</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">21</td>
-                        <td class="day-element">22</td>
-                        <td class="day-element">23</td>
-                        <td class="day-element">24</td>
-                        <td class="day-element">25</td>
-                        <td class="day-element sunday-saturday">26</td>
-                        <td class="day-element sunday-saturday">27</td>
-                    </tr>
-                    <tr>
-                        <td class="day-element">28</td>
-                        <td class="day-element">29</td>
-                        <td class="day-element">30</td>
-                        <td></td>
-                        <td></td>
-                        <td class="sunday-saturday"></td>
-                        <td class="sunday-saturday"></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <span class="glyphicon glyphicon-menu-right" style="float: left;padding-left: 10px"></span>
-
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="display: none">
     <div class="panel panel-default today-panel">
         <div class="panel-heading">Сегодня, 19 марта 2015 года</div>
         <div class="panel-body">
@@ -533,7 +252,158 @@
 
 
 </div>
-<div class="container">
+
+<div class="container" style="display: none">
+    <div class="row center-block">
+        <div class="panel panel-default">
+            <div class="panel-heading">Долгожданный отпуск в Турции! Ихуу!!<span
+                    class="glyphicon glyphicon-edit edit-button"
+                    style="margin-left: 10px"
+                    title="Изменить название"></span></div>
+            <div class="panel-body">
+                <div class="event-container-data-block center-block ">
+                    <a class="btn btn-default" onclick="$('#info_block').show();$('#flight_block').hide();">
+                    Описание
+                    </a>
+                    <a class="btn btn-default" onclick="$('#flight_block').show();$('#info_block').hide();">
+                        Дорога
+                    </a>
+                    <a class="btn btn-default">Отель</a>
+                    <a class="btn btn-default">Трасфер</a>
+                    <a class="btn btn-default">Мироприятия</a>
+                </div>
+
+                <div id="info_block">
+                    <div class="row event-container-data-block">
+                        <span class="title">Дата начала : </span>
+                        <span class="simple-text">28 марта, 7.00</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату начала"></span>
+                    </div>
+
+                    <div class="row event-container-data-block">
+                        <span class="title">Дата окончания : </span>
+                        <span class="simple-text">15 апреля, 7.00</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату окончания"></span>
+                    </div>
+
+                    <div class="row event-container-data-block">
+                        <span class="title">Цвет в календаре : </span>
+                        <span class="simple-text" style="color: green">зеленый</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить цвет"></span>
+                    </div>
+
+                    <div class="row event-container-data-block">
+                        <button type="button" class="btn btn-info">Добавить поле</button>
+                    </div>
+
+                </div>
+
+                <div id="flight_block" style="display: none">
+                    <div class="row event-container-data-block">
+                        <span class="title">Способ добраться : </span>
+
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="transport-select-button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Выбрать...
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a class="select-element" onclick="$('#transport-select-button').text('Самолет')">Самолет</a>
+                                </li>
+                                <li><a class="select-element" onclick="$('#transport-select-button').text('Поезд')">Поезд</a>
+                                </li>
+                                <li><a class="select-element" onclick="$('#transport-select-button').text('Машина')">Машина</a>
+                                </li>
+                                <li><a class="select-element" onclick="$('#transport-select-button').text('Корабль')">Корабль</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="row event-container-data-block">
+                        <span class="title">Вылет : </span>
+                        <button type="button" class="btn btn-warning">Заказать перелет</button>
+                    </div>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-primary">Поделиться</button>
+                    <button type="button" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;">Удалить</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="display: none">
+    <div class="row center-block">
+        <div class="panel panel-default">
+            <div class="panel-heading">День рождения Маши<span class="glyphicon glyphicon-edit edit-button"
+                                                               style="margin-left: 10px"
+                                                               title="Изменить название"></span></div>
+            <div class="panel-body">
+                <div class="row event-container-data-block">
+                    <span class="title">Дата : </span>
+                    <span class="simple-text">28 марта</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить дату"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Повторять : </span>
+                    <span class="simple-text">Каждый год</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить повторение"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Напоминание : </span>
+                    <span class="simple-text">в 12 часов дня, смс</span>
+                    <span class="glyphicon glyphicon-edit edit-button" style="margin-left: 10px"
+                          title="Изменить напоминание"></span>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Фото со встречи : </span>
+
+                    <div>
+                        <img src="test-sources/birthday1.jpg" width="80"
+                             height="80">
+                        <img src="test-sources/birthday2.jpg" width="80"
+                             height="80">
+                    <span class="glyphicon glyphicon-plus add-photo-button" style="margin-left: 10px"
+                          title="Добавить фото"></span>
+                    </div>
+                </div>
+
+                <div class="row event-container-data-block">
+                    <span class="title">Цвет в календаре : </span>
+                    <span class="simple-text" style="color: blue">синий</span>
+                    <span class="glyphicon glyphicon-edit  edit-button" style="margin-left: 10px"
+                          title="Изменить цвет"></span>
+                </div>
+
+
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-info">Добавить поле</button>
+                </div>
+                <div class="row event-container-data-block">
+                    <button type="button" class="btn btn-primary">Поделиться</button>
+                    <button type="button" class="btn btn-success">Сохранить</button>
+                    <button type="button" class="btn btn-danger" style="float: right;">Удалить</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="display: none">
     <div class="row center-block" id="custom-event-container">
         <div class="panel panel-default">
             <div class="panel-heading">Купить продукты<span class="glyphicon glyphicon-edit edit-button"
@@ -569,6 +439,7 @@
 
                 <div class="row event-container-data-block">
                     <span class="title">Список покупок : </span>
+
                     <div class="list-element">
                         <span class="simple-text">Картошка</span>
                     </div>
@@ -598,7 +469,7 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" style="display: none">
     <div class="row center-block" id="simple-event-container">
         <div class="panel panel-default">
             <div class="panel-heading">Встреча с заказчиком<span class="glyphicon glyphicon-edit edit-button"

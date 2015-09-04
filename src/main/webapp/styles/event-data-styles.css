@@ -25,3 +25,6 @@
 .list-element {
     margin-left: 10px;
 }
+.select-element {
+    cursor: pointer;
+}
